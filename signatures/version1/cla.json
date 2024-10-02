@@ -1,22 +1,6 @@
 {
   "signedContributors": [
     {
-      "name": "KimSangjun0519",
-      "id": 124543557,
-      "comment_id": 2383586942,
-      "created_at": "2024-09-30T15:55:48Z",
-      "repoId": 865483001,
-      "pullRequestNo": 1
-    },
-    {
-      "name": "KimSangjun0518",
-      "id": 124543556,
-      "comment_id": 2383632677,
-      "created_at": "2024-09-30T16:16:37Z",
-      "repoId": 865483001,
-      "pullRequestNo": 3
-    },
-    {
       "name": "jinhwankim6557",
       "id": 179672100,
       "comment_id": 2387464095,
