@@ -1,0 +1,36 @@
+name: push test
+
+on:
+  create:
+    branches:
+      - release/QA-*
+
+jobs:
+  update-changelog:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Git
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+
+    - name: Modify README.md
+      run: |
+        echo "## TEST release branch :  ${{ github.ref_name }}" >> README.md
+        
+    - name: Commit changes
+      run: |
+        git add README.md
+        git commit -m "Update README.md : ${{ github.ref_name }}"
+
+    - name: Push README.md
+      uses: ad-m/github-push-action@master
+      with:
+        branch: ${{ github.ref_name }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
